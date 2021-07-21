@@ -1,59 +1,19 @@
-# import random
 
-# print ()
-
-# def guess(x):
-#     random_number = random.randint(1, x)
-#     guess = 0
-#     while guess != random_number:
-#         guess = int(input(f'Guess a number between 1 and {x}: '))
-#         if guess < random_number:
-#             print('Sorry, guess again. Too low.')
-#         elif guess > random_number:
-#             print('Sorry, guess again. Too high.')
-
-#     print(f'Yay, congrats. You have guessed the number {random_number} correctly!!')
-
-# def computer_guess(x):
-#     low = 1
-#     high = x
-#     feedback = ''
-#     while feedback != 'c':
-#         if low != high:
-#             guess = random.randint(low, high)
-#         else:
-#             guess = low  # could also be high b/c low = high
-#         feedback = input(f'Is {guess} too high (H), too low (L), or correct (C)?? ').lower()
-#         if feedback == 'h':
-#             high = guess - 1
-#         elif feedback == 'l':
-#             low = guess + 1
-
-#     print(f'Yay! The computer guessed your number, {guess}, correctly!')
-
-
-# guess(10)
-
-
-
-
-""" Number Guessing Game
-----------------------------------------
-"""
 import random
 attempts_list = []
 def show_score():
     if len(attempts_list) <= 0:
         print ()
-        print("There is currently no high score, it's yours for the taking!")
+        print("There is currently no high score, it's yours for the taking!\n\n")
     else:
         print("The current high score is {} attempts".format(min(attempts_list)))
 def start_game():
     random_number = int(random.randint(1, 10))
     print("Hello there! Welcome to the Number Guessing Game (NGG)!")
+    print("...............................................................")
     player_name = input("What is your name please? ").upper()
     print()
-    print(".....................................................................")
+    print("...............................................................")
     wanna_play = input("Hi, {}, would you like to start playing the number guessing game? (Enter Y/N)".format(player_name))
      
     attempts = 0
@@ -68,7 +28,7 @@ def start_game():
                 print(f'YEEHH!, CONGRATULATIONS. You have guessed the number {random_number} correctly!!')
                 attempts += 1
                 attempts_list.append(attempts)
-                print(".....................................................................")
+                print("...............................................................")
                 print("It took you {} attempts".format(attempts))
                 print ()
                 play_again = input("Would you like to play the game again? (Enter Y/N) ").lower()
@@ -91,7 +51,7 @@ def start_game():
     else:
         print()
         print("Thank you playing the NGG, Goodbye!!")
-        print("      ~THE END~")
+        print("         ~THE END~   ")
         print()
 if __name__ == '__main__':
     start_game()
